@@ -2,6 +2,8 @@ const url = require('url');
 const request = require('request-promise');
 const isUri = require('valid-url').isUri;
 
+const format = 'json';
+
 /**
  * The internal library of node-bitly
  * @module node-bitly.lib
@@ -24,7 +26,7 @@ const generateUrl = (
   accessToken,
   method,
   data,
-  { apiUrl = 'api-ssl.bitly.com', apiVersion = 'v3', domain = 'bit.ly', format = 'json' } = {},
+  { apiUrl = 'api-ssl.bitly.com', apiVersion = 'v3', domain = 'bit.ly' } = {},
 ) => {
   const newQuery = Object.assign({
     access_token: accessToken,
